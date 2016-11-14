@@ -1,7 +1,7 @@
 //
 // Created by Harlan on 2016/11/10.
 // quick sort algorithm.
-//
+// 分之法思想
 
 #include <cstdio>
 

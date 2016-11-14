@@ -1,12 +1,16 @@
 //
 // Created by Harlan on 2016/11/8.
-//
+// 分之法思想：合并排序
 
-#include <malloc.h>
 #include <stdio.h>
+#include <malloc.h>
 
 void merge(int *a, int left, int mid, int right) {
-    int *b = (int *) malloc(sizeof(right - left + 1));
+    int *b = (int *) malloc(sizeof(int) * right - left + 1);
+
+   // printf("%d\n", sizeof(int));
+
+    //int b[right - left + 1];
     if (!b) {
         printf("merge failed!\n");
         return;

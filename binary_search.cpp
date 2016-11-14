@@ -1,5 +1,6 @@
 //
 // Created by Harlan on 2016/10/28.
+// 分治法思想：二分搜索
 //
 #include <stdio.h>
 

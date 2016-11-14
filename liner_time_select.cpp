@@ -1,6 +1,6 @@
 //
 // Created by Harlan on 2016/11/10.
-// 中文：线性时间选择
+// 中文：线性时间选择，分治法思想
 // description: choose the k'th smallest element from a array that is not sorted.
 
 #include <stdio.h>
