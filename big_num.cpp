@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
+#include <malloc.h>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ const int MAX_LENGTH = 1000;
 
 struct BigNum {
     int len;
-    int s[MAX_LENGTH];
+    int *s = (int *) malloc(sizeof(int) * MAX_LENGTH);
 
     BigNum() {
         len = 1;
@@ -35,6 +36,10 @@ struct BigNum {
         for (int i = 0; i < len; i++) {
             s[i] = num[len - i - 1] - '0';
         }
+        int j = len - 1;
+
+        //去掉前置零
+        while (s[j--] == 0)len--;
         return *this;
     }
 
@@ -52,7 +57,6 @@ struct BigNum {
             result = (char) (s[i] + '0') + result;
         }
         if (result == "")result = "0";
-
         return result;
     }
 
@@ -116,8 +120,8 @@ ostream &operator<<(ostream &out, const BigNum &x) {
 }
 
 int main() {
-    BigNum bigNum = "12345678901234567890";
-    BigNum bigNum1 = "9876543210987654321";
+    BigNum bigNum = "0000000000000100000";
+    BigNum bigNum1 = "000012121212";
     BigNum c = bigNum + bigNum1;
     cout << c << endl;
     return 0;

@@ -3,5 +3,5 @@ project(Algorithms)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES shortest_path_with_greedy.cpp)
+set(SOURCE_FILES big_num.cpp)
 add_executable(Algorithms ${SOURCE_FILES})
