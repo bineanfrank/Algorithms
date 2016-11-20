@@ -163,7 +163,7 @@ string multiply(string &x, string &y) {
 
     bool flag_x = false; //正
     bool flag_y = false;
-    bool flag; // 最终结果的正负号，默认为正
+    bool flag; // 最终结果的正负号
 
     //先处理正负号
     if (x.at(0) == '-') {//负
@@ -175,8 +175,8 @@ string multiply(string &x, string &y) {
         flag_y = true;
         y = y.substr(1);
     }
-
-    if ((flag_x && flag_y) || (!flag_x && !flag_y)) {//两个都为负或者两个都为正，则最终为正
+    //两个都为负或者两个都为正，则最终为正
+    if ((flag_x && flag_y) || (!flag_x && !flag_y)) {
         flag = false;
     } else {
         flag = true;//否则结果为负
