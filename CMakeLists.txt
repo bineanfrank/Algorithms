@@ -3,5 +3,5 @@ project(Algorithms)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES longest_common_subsequence_v3.cpp)
+set(SOURCE_FILES max_sub_sum.cpp)
 add_executable(Algorithms ${SOURCE_FILES})
