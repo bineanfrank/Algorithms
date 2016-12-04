@@ -28,7 +28,7 @@ public:
     StackNode *next;
 };
 
-// Stack类，摘自http://blog.csdn.net/liufeng_king/article/details/8500084
+// Stack类，摘自 http://blog.csdn.net/liufeng_king/article/details/8500084
 template<class T>
 class Stack {
 public:

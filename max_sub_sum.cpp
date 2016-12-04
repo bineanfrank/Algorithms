@@ -14,25 +14,28 @@ int max_sub_sum(int *array, int left, int right);
 int max_sub_sum(int *a, int n);
 
 int main() {
-    int best_i, best_j, best_sum = 0;
+    int best_i, best_j, best_sum;
     int *array = new int[13]{1, -1, 0, 45, 23, 56, -45, 34, 67, 12, -98, 0, 12};
     int n = 13;
 
     //分治法
+    printf("Divide & conquer:\n");
     printf("best_sum = %d.\n", max_sub_sum(array, 0, n - 1));
 
     //枚举法
-    //max_sub_sum(array, n, best_i, best_j, best_sum);
-    //printf("best_i = %d, best_j = %d, best_sum = %d.\n", best_i, best_j, best_sum);
+    printf("Enumration:\n");
+    max_sub_sum(array, n, best_i, best_j, best_sum);
+    printf("best_i = %d, best_j = %d, best_sum = %d.\n", best_i, best_j, best_sum);
 
     //动态规划
-    printf("best_sum = %d.\n", max_sub_sum(array, n);
+    printf("Dynamic:\n");
+    printf("best_sum = %d.\n", max_sub_sum(array, n));
     return 0;
 }
 
 // 枚举法
 void max_sub_sum(int *array, int n, int &best_i, int &best_j, int &best_sum) {
-
+    best_sum = 0;
     int temp_sum = 0;
     for (int i = 0; i < n; i++) {
         temp_sum = 0;
@@ -47,13 +50,8 @@ void max_sub_sum(int *array, int n, int &best_i, int &best_j, int &best_sum) {
     }
 }
 
-/**
- * 分治法
- * @param array
- * @param left
- * @param right
- * @return
- */
+
+//分治法
 int max_sub_sum(int *array, int left, int right) {
 
     int max_sum = 0;
@@ -80,8 +78,8 @@ int max_sub_sum(int *array, int left, int right) {
 
         //计算s2
         int s2 = 0, temp_s2 = 0;
-        for (int i = center + 1; i <= right; i++) {
-            temp_s2 += array[i];
+        for (int j = center + 1; j <= right; j++) {
+            temp_s2 += array[j];
             if (temp_s2 > s2) {
                 s2 = temp_s2;
             }
@@ -100,13 +98,13 @@ int max_sub_sum(int *array, int left, int right) {
     return max_sum;
 }
 
-// 动态规划 b[i] = max(b[i-1] + a[i], a[i])
+// 动态规划 b[i]表示前i个元素的最大子段和，b[i] = max(b[i-1] + a[i], a[i])
 int max_sub_sum(int *a, int n) {
     int sum = 0, b = 0;
-    for (int i = 1; i <= n; i++) {
-        if (b > 0) {
-            b = b + a[i];
-        } else {
+    for (int i = 0; i < n; i++) {
+        if (b > 0) { // b > 0的话，满足b[i-1] + a[i] > a[i]，只有大于0才会越加越大，与a[i]的大小正负无关
+            b += a[i];
+        } else { // 否则主要重新开始
             b = a[i];
         }
 

@@ -2,8 +2,8 @@
 // Created by Harlan on 2016/11/16.
 //
 
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 #include <cstdio>
 
 using namespace std;
