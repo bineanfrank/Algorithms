@@ -8,6 +8,7 @@
 // 1、LCSuffix(s[1, i-1], t[1, j-1]) + s[i], s[i] == t[j]
 // 2、"", s[i] == t[j]
 // 类似于最长公共子序列的问题
+//
 
 #include <iostream>
 
