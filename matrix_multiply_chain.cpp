@@ -61,6 +61,8 @@ int matrix_chain(int n) {
             //计算出A[i:j]的初始最小计算量
             m[i][j] = m[i + 1][j] + p[i - 1] * p[i] * p[j]; //其实应该加上m[i][i],但是为0，可以省略
 
+            s[i][j] = i;
+
             //然后开始用k对i->j进行划分，计算出最优的k位置
             for (int k = i + 1; k < j; k++) {
                 int u = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
