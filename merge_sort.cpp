@@ -6,7 +6,7 @@
 #include <malloc.h>
 
 void merge(int *a, int left, int mid, int right) {
-    int *b = (int *) malloc(sizeof(int) * right - left + 1);
+    int *b = (int *) malloc(sizeof(int) * (right - left + 1));
 
    // printf("%d\n", sizeof(int));
 
